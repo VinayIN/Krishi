@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Market |||</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+
+
+<body>
+    <div class="container-fluid">
+        <div class="row container-fluid">
+            <div class="col-sm-2">
+                <img src="/static/icon.png" width="50%" height="50%" alt="icon"/>
+            </div>
+            <div class="col-sm-8"></div>
+            <div class="col-sm-2">
+                <a href="/farmer/home">
+                    <img src="/static/home.png" width="45%" height="45%" alt="Home"/>
+                </a>
+            </div>
+        </div>
+
+        <div class="row" style="margin:3%;">
+                <div class="col-sm-12">
+                        {% block content %} {% endblock %}
+                </div>
+
+        </div>
+
+    </div>
+    <!--<footer class="footer container-fluid" style="bottom: 0; width: 100%;"> 
+          <div class="container" style=" background-color: #f5f5f5;
+     padding:30px 0px;">
+            <div class="row">  
+               
+             <div class="search-text"> 
+               <div class="container">
+                 <div class="row text-center">
+                 
+                   <div class="form">
+                       <h4>Leave your Feedback:</h4>
+                        <form id="search-form" class="form-search form-horizontal">
+                            <input type="text" class="input-search" placeholder="Email Address">
+                            <button type="submit" class="btn-search">SUBMIT</button>
+                        </form>
+                    </div>
+                <p>@Market Webpage</p>
+                  </div>         
+               </div>     
+          </div>
+        
+               
+           </div> 
+        </div>
+          </footer>-->
+</body>
+</html>

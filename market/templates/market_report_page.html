@@ -1,0 +1,56 @@
+{% extends "market_query_page.html" %}
+
+{% block content %}
+<div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-4">
+        {% include "market_query.html" %}
+      </div>
+      <div class="col-sm-8">
+          <div class="row">
+           <div id="container-fluid">
+            <div id="Market_report" class="carousel slide" data-ride="carousel" data-interval="false">
+                        <!-- slides -->
+               <ol class="carousel-indicators">
+                 <li data-target="#Market_report" data-slide-to="0" class="active"></li>
+                 {% for item_no in t_records %}
+                    <li data-target="#Market_report" data-slide-to=item_no class="active"></li>
+                    {% endfor %}
+               </ol>
+
+               <!-- wrapper -->
+               <div class="carousel-inner" role="listbox">
+                  <div class="item active">
+                    <img src="/static/market_report.png"/>
+                  </div>
+
+                 {% for record in t_records %}
+                 <div class="item">
+                    {% include "market_report.html" %}
+                  </div>
+                  {% endfor %}
+                  {% for record in t_records %}
+                 <div class="item">
+                    {% include "market_crop_price_report.html" %}
+                  </div>
+                  {% endfor %} 
+                </div> 
+
+                <a class="left carousel-control" href="#Market_report" data-slide="prev" role="button" data-slide="prev">
+                  <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                  <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control" href="#Market_report" data-slide="next" role="button data-slide="next">
+                  <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                  <span class="sr-only">Next</span>
+                </a>
+
+
+              </div>
+            </div> 
+          </div> 
+        </div>
+    </div>
+</div>
+
+{% endblock %} 

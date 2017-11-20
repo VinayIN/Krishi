@@ -1,0 +1,21 @@
+{% extends 'farmer_base.html' %}
+
+{% block content %}
+  <div class="modal-header text-center"><h2>Profile Update</h2></div>
+<div class="container-fluid" >
+<!--form-stars-here-->
+		
+  <form class="form-horizontal" method="post">
+	{% if user.is_authenticated %}
+    {% csrf_token %}
+  {{ user_form.as_p }}
+  {{ profile_form.as_p }}
+  {% for error in field.errors %}
+          <p style="color: red">{{ error }}</p>
+        {% endfor %}
+        {% endif %}
+  <button type="submit">Save changes</button>
+  </form>
+
+</div>
+{% endblock %}

@@ -1,0 +1,53 @@
+{% extends 'farmer_base.html' %}
+
+{% block content %}
+   <div class="row">
+        <div class="col-sm-12 box box-info">
+                    <div class="panel panel-default">
+                            <div class="panel-heading" style="background-color:rgb(247,155,153)"><h3> Welcome,{{user.first_name}}</h3></div>
+                                            <div class="panel-body">
+                                                <table class="table table-user-information">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>Aadhar:</td>
+                                                            <td>{{user.profile.aadhar}}</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Name:</td>
+                                                            <td>{{user.get_full_name}}</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>E-mail:</td>
+                                                            <td>{{user.email}}</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>PIN:</td>
+                                                            <td>{{user.profile.pin}}</td>
+                                                        </tr>
+
+                                                        <tr>
+                                                            <td>Crop Harvested:</td>
+                                                            {% for crops in user.profile.crops.all %}
+                                                            <td>{{crops}}</td>
+                                                            {% endfor %}
+                                                        </tr>
+                                                        
+
+                                                        <tr>
+                                                            <td>Transportation used:</td>
+                                                            {% for t in user.profile.transportation.all %}
+                                                            <td>{{t}}</td>{% endfor %}
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Warehouse Using:</td>
+                                                            {% for w in user.profile.warehouses.all %}
+                                                            <td>{{w}}</td>{% endfor %}
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                    </div>
+                                </div>
+                            </div>
+
+{% endblock %}

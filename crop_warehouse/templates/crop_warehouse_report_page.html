@@ -1,0 +1,56 @@
+{% extends "crop_warehouse_query_page.html" %}
+
+{% block content %}
+<div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-4">
+        {% include "crop_warehouse_query.html" %}
+      </div>
+      <div class="col-sm-8">
+          <div class="row">
+           <div id="container-fluid">
+            <div id="crop_warehouse_report" class="carousel slide" data-ride="carousel" data-interval="false">
+                        <!-- slides -->
+               <ol class="carousel-indicators">
+                 <li data-target="#crop_warehouse_report" data-slide-to="0" class="active"></li>
+                 {% for item_no in t_records %}
+                    <li data-target="#crop_warehouse_report" data-slide-to=item_no class="active"></li>
+                    {% endfor %}
+               </ol>
+
+               <!-- wrapper -->
+               <div class="carousel-inner" role="listbox">
+                  <div class="item active">
+                    <img src="/static/crop_warehouse_report.png"/>
+                  </div>
+
+                 {% for record in t_records %}
+                 <div class="item">
+                    {% include "crop_report.html" %}
+                  </div>
+                  {% endfor %}
+                  {% for record in t_records %}
+                 <div class="item">
+                    {% include "warehouse_report.html" %}
+                  </div>
+                  {% endfor %}  
+                </div> 
+
+                <a class="left carousel-control" href="#crop_warehouse_report" data-slide="prev" role="button" data-slide="prev">
+                  <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                  <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control" href="#crop_warehouse_report" data-slide="next" role="button data-slide="next">
+                  <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                  <span class="sr-only">Next</span>
+                </a>
+
+
+              </div>
+            </div> 
+          </div> 
+        </div>
+    </div>
+</div>
+
+{% endblock %} 

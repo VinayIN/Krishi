@@ -1,0 +1,30 @@
+{% extends 'farmer_base.html' %}
+{% block content %}
+	<div class="container-fluid">
+	{% if form.errors %}
+		<p style="color:red">username and password didn't match</p>
+	{% endif %}
+  <center>
+	<div class="container-fluid">
+<!--form-stars-here-->
+  <form action="" method="post">
+		{% csrf_token %}
+		<input type="hidden" />
+	{% for field in form %}
+      <p style="color:black;">
+        {{ field.label_tag }}<br>
+        {{ field }}<br>
+        {% for error in field.errors %}
+          <p style="color: red">{{ error }}</p>
+        {% endfor %}
+      </p>
+    {% endfor %}
+    <center>
+      <button type="submit" style="background-color: rgb(219,219,219);">Log in</button>
+    </center>
+    </form>
+
+</div>
+</center>
+</div>
+{% endblock %}
